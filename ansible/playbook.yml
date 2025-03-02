@@ -1,0 +1,16 @@
+---
+    - hosts: all
+      become: true
+      tasks:
+        - name: Create directory
+          ansible.builtin.file:
+            path: /Yousef/YKfolder  # Replace with your desired directory path
+            state: directory
+        - name: Create file using echo and redirection (file 1)
+          ansible.builtin.shell: echo "Hello my name is discotraveler. My name is also Yousef." > /Yousef/YKfolder/file1.txt
+          args:
+            executable: /bin/bash
+        - name: Create file using echo and redirection (file 2)
+          ansible.builtin.shell: echo "I am trying to learn ansible one day at a time" > /Yousef/YKfolder/myfile2.txt
+          args:
+            executable: /bin/bash
